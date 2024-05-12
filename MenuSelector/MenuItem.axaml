@@ -1,0 +1,15 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MenuSelector.MenuItem">
+    <Grid Width="480" RowDefinitions="Auto" ColumnDefinitions="350, 75, 30">
+        <Border Grid.Column="0" Margin="0 0 0 0" Background="#1f6aa5" CornerRadius="0 20 20 0">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="">
+                <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap"
+                           Name="MenuName"
+                           Margin="10 0 0 0" Padding="0 0 10 0">Placeholders</TextBlock>
+            </ScrollViewer>
+        </Border>
+        <TextBlock Grid.Column="1" VerticalAlignment="Center" Name="MenuWeek" Margin="10 0 0 0">Week-End</TextBlock>
+        <TextBlock Grid.Column="2" VerticalAlignment="Center" Name="MenuTime" Margin="10 0 0 0">Soir</TextBlock>
+    </Grid>
+</UserControl>

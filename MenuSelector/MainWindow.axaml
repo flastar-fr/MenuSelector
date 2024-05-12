@@ -1,0 +1,153 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MenuSelector.MainWindow"
+        Width="800"
+        Height="560"
+        CanResize="False"
+        Title="MenuSelector"
+        Background="#242424">
+
+    <StackPanel Orientation="Horizontal">
+                <!-- Left Side -->
+                <StackPanel Margin="10">
+                        <!-- Title -->
+                        <Border Margin="0 5 0 10" 
+                                CornerRadius="10"
+                                Background="#1f6aa5">
+                                <TextBlock Margin="5"
+                                           FontSize="30" 
+                                           HorizontalAlignment="Center"
+                                           Text="Menu Selector"
+                                           FontWeight="Bold">
+                                </TextBlock>
+                        </Border>
+                        
+                        <!-- Checkboxs -->
+                        <Border Margin="10 5 10 10"
+                                Padding="10 0 0 0"
+                                CornerRadius="10"
+                                Background="#1f6aa5">
+                                <RadioButton GroupName="SeasonSelect" Content="Hivers"/>
+                        </Border>
+                        
+                        <Border Margin="10 5 10 10"
+                                Padding="10 0 0 0"
+                                CornerRadius="10"
+                                Background="#1f6aa5">
+                                <RadioButton IsChecked="True" GroupName="SeasonSelect" Content="Mi-Saison"/>
+                        </Border>
+                        
+                        <Border Margin="10 5 10 10"
+                                Padding="10 0 0 0"
+                                CornerRadius="10"
+                                Background="#1f6aa5">
+                                <RadioButton GroupName="SeasonSelect" Content="Été"/>
+                        </Border>
+                        
+                        <!-- Week -->
+                        <StackPanel Margin="20 0 0 0">
+                                <TextBlock Margin="10 10 0 0"
+                                           Padding="0 0 0 0"
+                                           FontSize="20" 
+                                           HorizontalAlignment="Left"
+                                           Text="Semaine :">
+                                </TextBlock>
+                                
+                                <Grid ShowGridLines="False"  Margin="10" ColumnDefinitions="Auto, Auto, Auto" 
+                                      RowDefinitions="Auto, Auto, Auto">
+                                        <TextBox Margin="10" Grid.Row="0" Grid.Column="0"/> 
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="10" 
+                                                   FontSize="20" 
+                                                   HorizontalAlignment="Center" 
+                                                   Text="Midi">
+                                        </TextBlock>
+                                        <TextBox Margin="10" Grid.Row="1" Grid.Column="0"/> 
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" 
+                                                   FontSize="20" 
+                                                   HorizontalAlignment="Center" 
+                                                   Text="Semaine">
+                                        </TextBlock>
+                                </Grid>
+                        </StackPanel>
+                        
+                        <!-- Week End -->
+                        <StackPanel Margin="20 0 0 0">
+                                <TextBlock Margin="10 0 0 0"
+                                           FontSize="20" 
+                                           HorizontalAlignment="Left"
+                                           Text="Week End :">
+                                </TextBlock>
+                                
+                                <Grid ShowGridLines="False"  Margin="10" ColumnDefinitions="Auto, Auto, Auto" 
+                                      RowDefinitions="Auto, Auto, Auto">
+                                        <TextBox Margin="10" Grid.Row="0" Grid.Column="0"/> 
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="10" 
+                                                   FontSize="20" 
+                                                   HorizontalAlignment="Center" 
+                                                   Text="Midi">
+                                        </TextBlock>
+                                        <TextBox Margin="10" Grid.Row="1" Grid.Column="0"/> 
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" 
+                                                   FontSize="20" 
+                                                   HorizontalAlignment="Center" 
+                                                   Text="Semaine">
+                                        </TextBlock>
+                                </Grid>
+                        </StackPanel>
+                        <Button Background="#1f6aa5" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center">
+                            Générer
+                        </Button>
+                </StackPanel>
+                
+                <!-- Right Side -->
+                <StackPanel Margin="20">
+                    <!-- Menus Controlers -->
+                    <!-- Show Menus -->
+                    <StackPanel Orientation="Horizontal">
+                        <Button Margin="10 0 0 0">
+                            Afficher les menus
+                        </Button>
+                        <ComboBox SelectedIndex="0" Margin="10 0 0 0">
+                            <ComboBoxItem>Tous</ComboBoxItem>
+                            <ComboBoxItem>Week-End</ComboBoxItem>
+                            <ComboBoxItem>Semaine</ComboBoxItem>
+                            <ComboBoxItem>Hivers</ComboBoxItem>
+                            <ComboBoxItem>Mi-Saison</ComboBoxItem>
+                            <ComboBoxItem>Été</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    
+                    <!-- Add Menus -->
+                    <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto, Auto, Auto">
+                        <TextBlock Grid.Row="0" Grid.Column="0"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Margin="20 20 0 0">
+                            Ajouter
+                        </TextBlock>
+                        <Button Grid.Row="0" Grid.Column="1" Margin="20 15 0 0">Ajouter</Button>
+                        <TextBox Grid.Row="1" Grid.Column="0" 
+                                 Width="75" Watermark="Menu" Margin="10 15 0 0"/>
+                        <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="1" Margin="10 15 0 0">
+                            <ComboBoxItem>Hivers</ComboBoxItem>
+                            <ComboBoxItem>Mi-Saison</ComboBoxItem>
+                            <ComboBoxItem>Été</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox Grid.Row="1" Grid.Column="2" SelectedIndex="0" Margin="10 15 0 0">
+                            <ComboBoxItem>Semaine</ComboBoxItem>
+                            <ComboBoxItem>Week-End</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox Grid.Row="1" Grid.Column="3" SelectedIndex="1" Margin="10 15 0 0">
+                            <ComboBoxItem>Midi</ComboBoxItem>
+                            <ComboBoxItem>Soir</ComboBoxItem>
+                        </ComboBox>
+                        <TextBox Grid.Row="1" Grid.Column="4" 
+                                 Width="90" Watermark="Fréquence" Margin="10 15 0 0"/>
+                    </Grid>
+                    
+                    <!-- Menus -->
+                    <ListBox Name="MenusBox" CornerRadius="10" Margin="10 20 500 0" MaxHeight="330">
+                    </ListBox>
+                </StackPanel>
+        </StackPanel>
+</Window>
