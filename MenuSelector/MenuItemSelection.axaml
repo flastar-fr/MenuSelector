@@ -13,6 +13,8 @@
         <TextBlock Grid.Column="2" VerticalAlignment="Center" Name="MenuWeek" Margin="10 0 0 0">Week-End</TextBlock>
         <TextBlock Grid.Column="3" VerticalAlignment="Center" Name="MenuTime" Margin="10 0 0 0">Soir</TextBlock>
         <TextBlock Grid.Column="4" VerticalAlignment="Center" Name="MenuFrequence" Margin="10 0 0 0">4</TextBlock>
-        <Button Grid.Column="5" Background="Red" HorizontalAlignment="Right" Margin="10 0 0 0">Supprimer</Button>
+        <Button Grid.Column="5" Background="Red" HorizontalAlignment="Right"
+                Name="DeleteButton"
+                Margin="10 0 0 0">Supprimer</Button>
     </Grid>
 </UserControl>

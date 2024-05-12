@@ -124,3 +124,4 @@ C:\Users\hugob\Desktop\dév\C#\MenuSelector\MenuSelector\obj\Debug\net8.0\MenuSe
 C:\Users\hugob\Desktop\dév\C#\MenuSelector\MenuSelector\obj\Debug\net8.0\MenuSele.A3813B04.Up2Date
 C:\Users\hugob\Desktop\dév\C#\MenuSelector\MenuSelector\obj\Debug\net8.0\MenuSelector.genruntimeconfig.cache
 C:\Users\hugob\Desktop\dév\C#\MenuSelector\MenuSelector\obj\Debug\net8.0\ref\MenuSelector.dll
+C:\Users\hugob\Desktop\dév\C#\MenuSelector\MenuSelector\obj\Debug\net8.0\MenuSelector.sourcelink.json

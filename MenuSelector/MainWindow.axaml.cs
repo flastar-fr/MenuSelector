@@ -9,8 +9,16 @@ public partial class MainWindow : Window
         InitializeComponent();
         for (var i = 0; i < 15; i++)
         {
-            var test = new MenuItem("Pomme de terre au jambon", "Week-End", "Soir");
+            var test = new MenuItemSelection("Pomme de terre au jambon", "Mi-Saison", "Week-End", "Soir", "4", 
+                RemoveFromMenusBox);
             MenusBox.Items.Add(test);
         }
+    }
+
+    public bool RemoveFromMenusBox(MenuItemSelection menuItemSelection)
+    {
+        MenusBox.Items.Remove(menuItemSelection);
+
+        return true;
     }
 }
