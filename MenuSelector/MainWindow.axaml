@@ -156,8 +156,11 @@
                     </Grid>
                     
                     <!-- Menus -->
-                    <ListBox Name="MenusBox" CornerRadius="10" Margin="10 20 500 0" MaxHeight="330">
-                    </ListBox>
+                    <Border>
+                        <ListBox Name="MenusBox" CornerRadius="10" Margin="10 20 500 0" Height="330">
+                            <Border Width="480"/>
+                        </ListBox>
+                    </Border>
                 </StackPanel>
         </StackPanel>
 </Window>

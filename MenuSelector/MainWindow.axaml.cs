@@ -26,13 +26,15 @@ public partial class MainWindow : Window
 
     public bool RemoveFromMenusBox(MenuItemSelection menuItemSelection)
     {
-        int.TryParse(menuItemSelection.MenuFrequence.Text!, out int freq);
+        int freq = int.Parse(menuItemSelection.MenuFrequence.Text!);
         RemoveToDatabase(menuItemSelection.MenuName.Text!,
             menuItemSelection.MenuSeason.Text!,
             menuItemSelection.MenuWeek.Text!,
             menuItemSelection.MenuTime.Text!,
             freq);
         MenusBox.Items.Remove(menuItemSelection);
+
+        if (MenusBox.Items.Count == 0) MenusBox.Items.Add(new Border { Width = 480 });
 
         return true;
     }
@@ -145,6 +147,8 @@ public partial class MainWindow : Window
                 RemoveFromMenusBox);
             MenusBox.Items.Add(item);
         }
+        
+        if (MenusBox.Items.Count == 0) MenusBox.Items.Add(new Border { Width = 480 });
     }
 
     public void GenerateMenus(object? sender, RoutedEventArgs e)
@@ -200,6 +204,8 @@ public partial class MainWindow : Window
             return;
         }
         if (amount >= 1) GenerateMenusFromCategory(season, "Week-End", "Soir", amount);
+        
+        if (MenusBox.Items.Count == 0) MenusBox.Items.Add(new Border { Width = 480 });
     }
 
     public void GenerateMenusFromCategory(string season, string week, string time, int amount)
