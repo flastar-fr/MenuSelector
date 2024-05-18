@@ -22,6 +22,7 @@ public partial class MainWindow : Window
         var connection = new SQLiteConnection("Data Source=" + DbPath);
         connection.Open();
         _command = new SQLiteCommand(connection);
+        Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
     }
 
     public bool RemoveFromMenusBox(MenuItemSelection menuItemSelection)
