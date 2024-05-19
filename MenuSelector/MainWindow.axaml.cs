@@ -14,15 +14,19 @@ public partial class MainWindow : Window
 {
     private const string DbPath = "database_to_use.db";
     private readonly SQLiteCommand _command;
+    private readonly SQLiteConnection _connection = new SQLiteConnection("Data Source=" + DbPath);
 
     public MainWindow()
     {
         InitializeComponent();
-
-        var connection = new SQLiteConnection("Data Source=" + DbPath);
-        connection.Open();
-        _command = new SQLiteCommand(connection);
+        _connection.Open();
+        _command = new SQLiteCommand(_connection);
         Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
+    }
+
+    public void OnExit(object sender, WindowClosingEventArgs e)
+    {
+        _connection.Close();
     }
 
     public bool RemoveFromMenusBox(MenuItemSelection menuItemSelection)
@@ -67,12 +71,13 @@ public partial class MainWindow : Window
             return;
         }
 
-        if (freqToAdd is < 0 or > 4)
+        if (freqToAdd is < 1 or > 4)
         {
             IMsBox<ButtonResult>? box =
                 MessageBoxManager.GetMessageBoxStandard("Error", "La fréquence doit être entre 1 et 5",
                     icon: MsBox.Avalonia.Enums.Icon.Error);
             box.ShowAsync();
+            return;
         }
 
         _command.CommandText = "INSERT INTO Menus(name, season, week, timing, frequence) " +
@@ -148,6 +153,7 @@ public partial class MainWindow : Window
                 RemoveFromMenusBox);
             MenusBox.Items.Add(item);
         }
+        reader.Close();
         
         if (MenusBox.Items.Count == 0) MenusBox.Items.Add(new Border { Width = 480 });
     }
@@ -161,7 +167,8 @@ public partial class MainWindow : Window
         else season = "Été";
         
         MenusBox.Items.Clear();
-
+        
+        // add to MenusBox for each case
         bool isNumeric = int.TryParse(MidiSe.Text ?? "0", out int amount);
         if (!isNumeric)
         {
@@ -229,7 +236,6 @@ public partial class MainWindow : Window
                 listItem.Add(item);
             }
         }
-
         reader.Close();
 
         if (amount > hashTableItem.Count)

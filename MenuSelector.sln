@@ -14,3 +14,7 @@ Global
 		{7BF1F6B1-3D83-4A5A-BB2C-72EDE214C329}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
+
+<PropertyGroup>
+    <ApplicationIcon>Assets/logo.ico</ApplicationIcon>
+</PropertyGroup>

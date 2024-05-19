@@ -6,7 +6,8 @@
         Height="560"
         CanResize="False"
         Title="MenuSelector"
-        Background="#242424">
+        Background="#242424"
+        Closing="OnExit">
 
     <StackPanel Orientation="Horizontal">
                 <!-- Left Side -->
